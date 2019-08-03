@@ -64,6 +64,10 @@
       <Project>{2CC52C5B-8002-4ED4-8948-7632002A9BDF}</Project>
       <Name>DbModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\QueryStore\QueryStore.csproj">
+      <Project>{604E7156-97E7-40B2-89E0-9B8119F4053B}</Project>
+      <Name>QueryStore</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

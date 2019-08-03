@@ -6,3 +6,6 @@
 [Performance Considerations (Entity Framework)](https://docs.microsoft.com/ru-ru/dotnet/framework/data/adonet/ef/performance-considerations)
 
 [Performance considerations for EF 4, 5, and 6](https://docs.microsoft.com/ru-ru/ef/ef6/fundamentals/performance/perf-whitepaper)
+
+##Примеры
+В папке [example](/tree/master/example) находится проект примерами того, как исправить код, чтобы EF начал использовать параметры, там где он вставляет значения переменных и начал кэшировать запросы.

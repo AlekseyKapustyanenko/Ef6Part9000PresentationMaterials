@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace DbModel
 {
-    public class DataContext:DbContext
+    public class BookStoreContext:DbContext
     {
 
 
-        public DataContext():base("StoreDb")
+        public BookStoreContext():base("StoreDb")
         {
-            Database.SetInitializer<DataContext>(new CreateDatabaseIfNotExists<DataContext>());
+            Database.SetInitializer<BookStoreContext>(new CreateDatabaseIfNotExists<BookStoreContext>());
         }
 
         public virtual DbSet<Order> Orders { get; set; }

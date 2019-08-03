@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataContext.cs" />
+    <Compile Include="BookStoreContext.cs" />
     <Compile Include="Moddels\Book.cs" />
     <Compile Include="Moddels\Order.cs" />
     <Compile Include="Moddels\OrderBook.cs" />
