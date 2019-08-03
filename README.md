@@ -7,5 +7,5 @@
 
 [Performance considerations for EF 4, 5, and 6](https://docs.microsoft.com/ru-ru/ef/ef6/fundamentals/performance/perf-whitepaper)
 
-##Примеры
+## Примеры
 В папке [example](/example) находится проект примерами того, как исправить код, чтобы EF начал использовать параметры, там где он вставляет значения переменных и начал кэшировать запросы.
