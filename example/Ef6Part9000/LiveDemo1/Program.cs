@@ -17,6 +17,8 @@ namespace LiveDemo1
     
     class Program
     {
+        const int maxDiscountValue = 5;
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -61,9 +63,9 @@ namespace LiveDemo1
             {
                 var ordersWithDiscountForBook = context.Orders
                     .Where(o => !o.IsDiscountOrder && o.OrderBooks
-                        .Any(ob => ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue > 5));
+                        .Any(ob => ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue > maxDiscountValue));
 
-                var ordersWithCommonDiscounts = context.Orders.Where(o => o.IsDiscountOrder && o.DiscountValue > 5);
+                var ordersWithCommonDiscounts = context.Orders.Where(o => o.IsDiscountOrder && o.DiscountValue > maxDiscountValue);
                 var concatQuery = ordersWithDiscountForBook.Concat(ordersWithCommonDiscounts);
 
                 var mappedQuery = concatQuery.Select(o => new OrderDto
@@ -72,7 +74,7 @@ namespace LiveDemo1
                     Notice = o.Notice,
                     Status = o.Status,
                     DiscountBooks =
-                     o.OrderBooks.Where(ob => ob.Order.IsDiscountOrder || (ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue > 5)).Select(ob => new BookDto
+                     o.OrderBooks.Where(ob => ob.Order.IsDiscountOrder || (ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue > maxDiscountValue)).Select(ob => new BookDto
                      {
                          Id = ob.BookId,
                          Name = ob.Book.Name,
@@ -96,7 +98,7 @@ namespace LiveDemo1
         static string GoodQuery()
         {
             var statusValues = new StatusEnum[] { StatusEnum.New, StatusEnum.Processed };
-            var fiveValue = 5;
+            var fiveValue = maxDiscountValue;
             var trueValue = true;
             var falseValue = false;
             var zeroValue = 0;

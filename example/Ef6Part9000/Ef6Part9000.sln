@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveDemo1", "LiveDemo1\Live
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dto", "Dto\Dto.csproj", "{D8618D01-4A39-446F-9487-B3E04C1DBD91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveDemo2", "LiveDemo2\LiveDemo2.csproj", "{4F788F67-4957-4350-AF23-244FFD94C691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D8618D01-4A39-446F-9487-B3E04C1DBD91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8618D01-4A39-446F-9487-B3E04C1DBD91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8618D01-4A39-446F-9487-B3E04C1DBD91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F788F67-4957-4350-AF23-244FFD94C691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F788F67-4957-4350-AF23-244FFD94C691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F788F67-4957-4350-AF23-244FFD94C691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F788F67-4957-4350-AF23-244FFD94C691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
