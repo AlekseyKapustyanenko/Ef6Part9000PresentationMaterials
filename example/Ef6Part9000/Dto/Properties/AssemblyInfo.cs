@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Ef6Part9000")]
+[assembly: AssemblyTitle("Dto")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ef6Part9000")]
+[assembly: AssemblyProduct("Dto")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("9e187684-40c5-4289-9226-5d7dc4d9af5c")]
+[assembly: Guid("d8618d01-4a39-446f-9487-b3e04c1dbd91")]
 
 // Version information for an assembly consists of the following four values:
 //

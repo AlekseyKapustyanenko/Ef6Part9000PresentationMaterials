@@ -48,10 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookStoreContext.cs" />
-    <Compile Include="Moddels\Book.cs" />
-    <Compile Include="Moddels\Order.cs" />
-    <Compile Include="Moddels\OrderBook.cs" />
-    <Compile Include="Moddels\StatusEnum.cs" />
+    <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\DiscountForBook.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderBook.cs" />
+    <Compile Include="Models\StatusEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using DbModel.Moddels;
+﻿
+using DbModel.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -22,6 +23,7 @@ namespace DbModel
         public virtual DbSet<Book> Books{ get; set; }
 
         public virtual DbSet<OrderBook> OrderBooks { get; set; }
-
+       
+        public virtual DbSet<DiscountForBook> DiscountForBooks { get; set; }
     }
 }

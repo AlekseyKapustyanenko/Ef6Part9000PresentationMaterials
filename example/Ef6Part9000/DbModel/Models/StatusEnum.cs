@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbModel.Moddels
+namespace DbModel.Models
 {
     public enum StatusEnum
     {

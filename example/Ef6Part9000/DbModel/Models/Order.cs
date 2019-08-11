@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DbModel.Moddels
+namespace DbModel.Models
 {
     public class Order
     {
@@ -17,5 +17,9 @@ namespace DbModel.Moddels
         public string Notice { get; set; }
 
         public virtual ICollection<OrderBook> OrderBooks { get; set; }
+
+        public bool IsDiscountOrder { get; set; }
+
+        public int DiscountValue { get; set; }
     }
 }
