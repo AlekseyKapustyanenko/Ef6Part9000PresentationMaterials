@@ -86,7 +86,9 @@ namespace LiveDemo2
             var statusValues = new StatusEnum[] { StatusEnum.New, StatusEnum.Processed };
             using (var context = new BookStoreContext())
             {
-                var query = context.Orders.Where(o => statusValues[0]==o.Status || statusValues[2]==o.Status);
+                var el1 = statusValues[0];
+                var el2 = statusValues[1];
+                var query = context.Orders.Where(o =>el1 ==o.Status ||el2 ==o.Status);
                 var result = query.ToList();
                 return ((DbQuery<Order>)query).Sql;
             }
