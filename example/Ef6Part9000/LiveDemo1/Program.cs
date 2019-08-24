@@ -3,6 +3,7 @@ using DbModel;
 using DbModel.Models;
 using Dto;
 using LinqKit;
+using NihFix.EfQueryCacheOptimizer.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -29,7 +30,7 @@ namespace LiveDemo1
 
             while (true)
             {
-                Console.Write("Выбирете пример 1 - плохой, 2 - хороший: ");
+                Console.Write("Выбирете пример 1 - исходный, 2 - оптимизированный, 3 - NihFix.EfQueryCacheOptimizer: ");
                 var number = Console.ReadLine();
                 switch (number)
                 {
@@ -49,6 +50,15 @@ namespace LiveDemo1
                             stopwatch.Stop();                            
                             Clipboard.SetText(sql);
                             Console.WriteLine($"Хороший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            break;
+                        }
+                    case "3":
+                        {
+                            var stopwatch = Stopwatch.StartNew();
+                            var sql = TheBestQuery();
+                            stopwatch.Stop();
+                            Clipboard.SetText(sql);
+                            Console.WriteLine($"Лучший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
                             break;
                         }
                 }
@@ -91,7 +101,7 @@ namespace LiveDemo1
 
                 var filteredQuery = mappedQuery.Where(o => statusValues.Contains(o.Status));
                 var result = filteredQuery.ToList();
-                return ((DbQuery<OrderDto>)filteredQuery).Sql;
+                return ((DbQuery<OrderDto>)filteredQuery.AsQueryable()).Sql;
             }
         }
 
@@ -136,6 +146,45 @@ namespace LiveDemo1
                 var filteredQuery = mappedQuery.Where(predicate);
                 var result = filteredQuery.ToList();
                 return ((DbQuery<OrderDto>)filteredQuery).Sql;
+            }
+        }
+
+        static string TheBestQuery()
+        {
+            var statusValues = new StatusEnum[] { StatusEnum.New, StatusEnum.Processed };
+            using (var context = new BookStoreContext())
+            {
+                var ordersWithDiscountForBook = context.Orders.AsCacheOptimizedQueriable()
+                    .Where(o => !o.IsDiscountOrder && o.OrderBooks
+                        .Any(ob => ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue > maxDiscountValue));
+
+                var ordersWithCommonDiscounts = context.Orders.AsCacheOptimizedQueriable().Where(o => o.IsDiscountOrder && o.DiscountValue > maxDiscountValue);
+                var concatQuery = ordersWithDiscountForBook.Concat(ordersWithCommonDiscounts);
+
+                var mappedQuery = concatQuery.AsCacheOptimizedQueriable().Select(o => new OrderDto
+                {
+                    Id = o.Id,
+                    Notice = o.Notice,
+                    Status = o.Status,
+                    DiscountBooks =
+                     o.OrderBooks.Where(ob => ob.Order.IsDiscountOrder || (ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue > maxDiscountValue)).Select(ob => new BookDto
+                     {
+                         Id = ob.BookId,
+                         Name = ob.Book.Name,
+                         DiscountValue = o.IsDiscountOrder ? o.DiscountValue : ob.Book.DiscountForBookId.HasValue ? ob.Book.DiscountForBook.DiscountValue : 0
+                     }),
+                    SimpleBooks = o.OrderBooks.Where(ob => !ob.Order.IsDiscountOrder && (!ob.Book.DiscountForBookId.HasValue || ob.Book.DiscountForBookId.HasValue && ob.Book.DiscountForBook.DiscountValue <= 5)).Select(ob => new BookDto
+                    {
+                        Id = ob.BookId,
+                        Name = ob.Book.Name,
+                        DiscountValue = o.IsDiscountOrder ? o.DiscountValue : ob.Book.DiscountForBookId.HasValue ? ob.Book.DiscountForBook.DiscountValue : 0
+                    }),
+
+                });
+
+                var filteredQuery = mappedQuery.AsCacheOptimizedQueriable().Where(o => statusValues.Contains(o.Status));
+                var result = filteredQuery.ToList();
+                return ((DbQuery<OrderDto>)filteredQuery.AsQueryable()).Sql;
             }
         }
     }

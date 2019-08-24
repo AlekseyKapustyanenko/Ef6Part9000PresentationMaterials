@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbModel", "DbModel\DbModel.csproj", "{2CC52C5B-8002-4ED4-8948-7632002A9BDF}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveDemo3", "LiveDemo3\LiveDemo3.csproj", "{B6688C41-4EF1-49F2-9598-693D3ECC9661}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LiveDemo4", "LiveDemo4\LiveDemo4.csproj", "{1249AAD7-822E-4C23-A661-8615A0ADBFC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NihFix.EfQueryCacheOptimizer", "..\..\..\NihFix\NihFix.EfQueryCacheOptimizer\NihFix.EfQueryCacheOptimizer\NihFix.EfQueryCacheOptimizer.csproj", "{C7400603-41F4-4F01-8D46-762C039A1566}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{1249AAD7-822E-4C23-A661-8615A0ADBFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1249AAD7-822E-4C23-A661-8615A0ADBFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1249AAD7-822E-4C23-A661-8615A0ADBFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7400603-41F4-4F01-8D46-762C039A1566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7400603-41F4-4F01-8D46-762C039A1566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7400603-41F4-4F01-8D46-762C039A1566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7400603-41F4-4F01-8D46-762C039A1566}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
