@@ -24,7 +24,7 @@ namespace LiveDemo3
 
             while (true)
             {
-                Console.Write("Выбирете пример 1 - плохой, 2 - хороший: ");
+                Console.Write("Выбирете пример 1 - исходный, 2 - оптимизированный: ");
                 var number = Console.ReadLine();
                 switch (number)
                 {
@@ -34,7 +34,7 @@ namespace LiveDemo3
                             var sql = BadQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Плохой запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Исходный запрос выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                     case "2":
@@ -43,7 +43,7 @@ namespace LiveDemo3
                             var sql = GoodQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Хороший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Оптимизированный запрос выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                 }

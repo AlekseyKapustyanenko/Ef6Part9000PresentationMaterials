@@ -40,7 +40,7 @@ namespace LiveDemo1
                             var sql = BadQuery();
                             stopwatch.Stop();                       
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Плохой запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Исходный запрос выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                     case "2":
@@ -49,7 +49,7 @@ namespace LiveDemo1
                             var sql = GoodQuery();
                             stopwatch.Stop();                            
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Хороший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Оптимизированный запрос выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                     case "3":
@@ -58,7 +58,7 @@ namespace LiveDemo1
                             var sql = TheBestQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Лучший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"NihFix.EfQueryCacheOptimizer {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                 }

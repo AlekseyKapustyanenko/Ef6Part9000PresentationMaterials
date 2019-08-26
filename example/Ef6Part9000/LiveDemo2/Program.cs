@@ -25,7 +25,7 @@ namespace LiveDemo2
 
             while (true)
             {
-                Console.Write("Выбирете пример 1 - плохой, 2 - NotGood, 3 - NotBad 4 - хороший,: ");
+                Console.Write("Выбирете пример 1 - исходный, 2 - замена на \"или\", 3 - постороение Expression 4 - LinqKit,: ");
                 var number = Console.ReadLine();
                 switch (number)
                 {
@@ -35,7 +35,7 @@ namespace LiveDemo2
                             var sql = BadQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Плохой запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Плохой исходный выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                     case "2":
@@ -44,7 +44,7 @@ namespace LiveDemo2
                             var sql = NotGoodQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Хороший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Запрос с заменой на \"или\" выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                     case "3":
@@ -53,7 +53,7 @@ namespace LiveDemo2
                             var sql = NotBadQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Хороший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Запрос с построением выражений выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                     case "4":
@@ -62,7 +62,7 @@ namespace LiveDemo2
                             var sql = GoodQuery();
                             stopwatch.Stop();
                             Clipboard.SetText(sql);
-                            Console.WriteLine($"Хороший запрос выполнился за {stopwatch.ElapsedMilliseconds}");
+                            Console.WriteLine($"Запрос с LinqKit выполнился за {stopwatch.ElapsedMilliseconds} мс");
                             break;
                         }
                 }
