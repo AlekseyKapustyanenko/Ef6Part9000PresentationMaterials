@@ -10,5 +10,8 @@
 ## Примеры
 В папке [example](/example) находится проект примерами того, как исправить код, чтобы EF начал использовать параметры, там где он вставляет значения переменных и начал кэшировать запросы.
 
+## NihFix.EfQueryCacheOptimizer
+[NuGet](https://www.nuget.org/packages/NihFix.EfQueryCacheOptimizer/) | [GitHub](https://github.com/alexeykap/NihFix.EfQueryCacheOptimizer)
+
 ## Обратная связь
 Telegram: [KapAleksey](https://t.me/KapAleksey)
