@@ -58,7 +58,7 @@
       <HintPath>..\packages\Mono.Reflection.Core.1.1.1\lib\net45\Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="NihFix.EfQueryCacheOptimizer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NihFix.EfQueryCacheOptimizer.1.1.0\lib\net462\NihFix.EfQueryCacheOptimizer.dll</HintPath>
+      <HintPath>..\packages\NihFix.EfQueryCacheOptimizer.1.2.2\lib\net462\NihFix.EfQueryCacheOptimizer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />

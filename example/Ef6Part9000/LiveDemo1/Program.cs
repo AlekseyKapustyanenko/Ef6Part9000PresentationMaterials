@@ -3,7 +3,6 @@ using DbModel;
 using DbModel.Models;
 using Dto;
 using LinqKit;
-using NihFix.EfQueryCacheOptimizer.Extentions;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
@@ -182,7 +181,7 @@ namespace LiveDemo1
 
                 });
 
-                var filteredQuery = mappedQuery.AsCacheOptimizedQueriable().Where(o => statusValues.Contains(o.Status));
+                var filteredQuery = mappedQuery.Where(o => statusValues.Contains(o.Status));
                 var result = filteredQuery.ToList();
                 return ((DbQuery<OrderDto>)filteredQuery.AsQueryable()).Sql;
             }
